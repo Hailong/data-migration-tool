@@ -149,7 +149,7 @@ class Data implements StageInterface
                 $columnOptions
             );
         $adapter->createTable($table);
-        $incrementMaxNumber = $this->helper->getMaxIncrementForEntityType($entityType['entity_type_id']);
+        $incrementMaxNumber = $this->helper->getMaxIncrementForEntityType($entityType['entity_type_id'], $storeId);
         if ($incrementMaxNumber !== false) {
             $adapter->insert($tableName, [$entityType['column'] => $incrementMaxNumber]);
         }
